@@ -54,7 +54,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         for(l in locationList){
             val location = LatLng(l.Lat,l.Long)
-            
+            mMap.addMarker(MarkerOptions().position(location).title(l.trailName))
         }
             mMap.moveCamera(CameraUpdateFactory.newLatLng(minnesota))
             mMap.setOnInfoWindowClickListener {marker ->
